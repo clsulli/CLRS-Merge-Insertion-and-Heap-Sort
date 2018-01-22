@@ -15,13 +15,12 @@ def insertionSort(a):
 
     return a
 
-#Merge Sort #Page 34 --modified to take advantage of python list functions **:mid, mid:
+#Merge Sort #Page 34
 def mergeSort(a):
     #base case
     if len(a) == 1:
         return a
 
-    # Floor division because no types in python.  If / evaluated as float.
     middle = len(a)//2
 
     #Split array until single elements
@@ -36,7 +35,6 @@ def merge(left, right):
     i = 0
     j = 0
 
-    #Step through each array, taking least most item and adding to mergeArray
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             mergeArray.append(left[i])
@@ -45,9 +43,9 @@ def merge(left, right):
             mergeArray.append(right[j])
             j = j + 1
 
-    #Handles Odd amount of elements // Leftover elements
+    #Handles Odd amount of elements
     if i < len(left):
-        mergeArray.extend(left[i:]) #extend: appends the elements left in array "left" to mergeArray
+        mergeArray.extend(left[i:]) #extend appends the elements left in array "left" to mergeArray
     elif j < len(right):
         mergeArray.extend(right[j:])
 
@@ -112,7 +110,7 @@ def selectSort():
     print("     (b) Merge Sort")
     print("     (c) Heap Sort")
 
-    choice = input(">> ")
+    choice = raw_input(">> ")
 
     if choice == "a" or choice == "A":
         return 1
@@ -130,7 +128,7 @@ def selectSize():
     print("     (d) 120K")
     print("     (e) 150K")
 
-    choice = input(">> ")
+    choice = raw_input(">> ")
 
     if choice == "a" or choice == "A":
         return 1
@@ -149,7 +147,7 @@ def selectPorS():
         print("     (a) Permutated")
         print("     (b) Sorted")
 
-        choice = input(">> ")
+        choice = raw_input(">> ")
 
         if choice == "a" or choice == "A":
             return 1
